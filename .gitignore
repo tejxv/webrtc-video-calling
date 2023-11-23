@@ -1,0 +1,6 @@
+client/dist/
+client/index.html
+node_modules/
+.DS_Store
+.env
+package-lock.json
