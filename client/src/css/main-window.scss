@@ -1,6 +1,7 @@
 .main-window {
   padding-top: 80px;
   font-size: 1.75em;
+  font-family: ProductSans-Regular; // Add font family here
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,23 +30,69 @@
     border: solid 2px $main-color;
     cursor: pointer;
     transition-duration: 0.25s;
-    background-color: transparent;
+    background-color: black;
 
     &:hover {
-      background-color: rgba($main-color, 0.2);
+      background-color: rgba(black, 0.7);
     }
   }
-
+  .flex {
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .muted {
+    color: #00000099;
+  }
+  .inputTitle {
+    display: flex;
+    text-align: center;
+    // border: 1px solid red;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    background: #f4f4f4;
+    border-radius: 32px;
+    margin: 4rem 0 0 0;
+  }
   .txt-clientId {
     height: 40px;
-    width: 657px;
-    border: 1px dashed white;
-    color: $main-color;
+    width: 470px;
+    border: 2px solid #cfcfcf;
+    color: #a5a5a5;
     font-size: 1em;
-    background-color: transparent;
+    background-color: white;
     padding: 2rem;
-    // border-bottom: solid 1px #FFFFFF;
-    border-radius: 34px;
+    border-radius: 14px;
     @include input-placeholder(rgba($main-color, 0.8));
   }
+}
+.alreadyID {
+  display: flex;
+  text-align: center;
+  // border: 1px solid red;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 1rem;
+  background: white;
+  border-radius: 32px;
+  margin: 0;
+}
+
+.copyID:active {
+  transform: scale(0.98);
+}
+
+.callButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
 }

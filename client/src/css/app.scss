@@ -3,15 +3,27 @@
 @import 'variables';
 @import 'shared/base';
 
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'),
+    url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2)
+      format('woff2');
+}
+* {
+  transition: all 100ms ease-in-out;
+}
 html {
-  background: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
-    center no-repeat fixed;
+  background: white;
 }
 
 body {
-  background: rgba(#000000, 0.6);
+  background: white;
   padding: 0px 20px 20px 20px;
   min-height: 100vh;
+  font-family: Product Sans;
+  color: black;
 }
 
 .navbar-brand {

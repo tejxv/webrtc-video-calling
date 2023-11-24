@@ -7,7 +7,11 @@ const adjs = [
   'red', 'rough', 'still', 'small', 'sparkling', 'throbbing', 'shy',
   'wandering', 'withered', 'wild', 'black', 'young', 'holy', 'solitary',
   'fragrant', 'aged', 'snowy', 'proud', 'floral', 'restless', 'divine',
-  'polished', 'ancient', 'purple', 'lively', 'nameless'
+  'polished', 'ancient', 'purple', 'lively', 'nameless',
+  'tiny', 'vivid', 'calm', 'brave', 'faint', 'fresh', 'gentle', 'harsh',
+  'jagged', 'mellow', 'narrow', 'pale', 'quiet', 'rapid', 'shallow', 'tall',
+  'vast', 'wide', 'zesty', 'cozy', 'dizzy', 'fuzzy', 'gloomy', 'hazy',
+  'jolly', 'merry', 'noisy', 'silly', 'tasty', 'witty', 'zippy'
 ];
 
 const nouns = [
@@ -19,14 +23,18 @@ const nouns = [
   'snowflake', 'silence', 'sound', 'sky', 'shape', 'surf', 'thunder',
   'violet', 'water', 'wildflower', 'wave', 'water', 'resonance', 'sun',
   'wood', 'dream', 'cherry', 'tree', 'fog', 'frost', 'voice', 'paper',
-  'frog', 'smoke', 'star'
+  'frog', 'smoke', 'star', 'cloud', 'rainbow', 'stone', 'echo', 'whisper',
+  'ocean', 'horizon', 'pebble', 'squirrel', 'peacock', 'creek', 'tide',
+  'moss', 'breeze', 'canyon', 'desert', 'thunderstorm', 'lightning',
+  'reflection', 'harmony', 'serenity', 'serenade', 'harbor', 'island',
+  'seashell', 'seagull', 'sand', 'shell', 'coral', 'tropical', 'paradise'
 ];
 
 module.exports = () => {
   const adj = adjs[Math.floor(Math.random() * adjs.length)];
   const noun = nouns[Math.floor(Math.random() * nouns.length)];
-  const MIN = 1000;
-  const MAX = 9999;
+  const MIN = 100;
+  const MAX = 999;
   const num = Math.floor(Math.random() * ((MAX + 1) - MIN)) + MIN;
 
   return `${adj}-${noun}-${num}`;

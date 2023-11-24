@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { faPhone, faVideo } from '@fortawesome/free-solid-svg-icons';
 import ActionButton from './ActionButton';
 import { socket } from '../communication';
+import logo from '../components/assets/logo.svg'
 
 // Include the CopyToClipboardInput component here
 function CopyToClipboardInput({ clientID }) {
@@ -24,7 +25,7 @@ function CopyToClipboardInput({ clientID }) {
   };
 
   return (
-    <div>
+    <div className='copyID'>
       <input
         type="text"
         className="txt-clientId"
@@ -32,7 +33,7 @@ function CopyToClipboardInput({ clientID }) {
         readOnly
         onClick={handleCopyToClipboard}
       />
-      {isCopied && <p style={{ color: 'navajowhite' }}>Copied to clipboard!</p>}
+      {isCopied && <p style={{ color: 'blue', marginTop: '2rem' }}>Copied to clipboard!</p>}
     </div>
   );
 }
@@ -62,26 +63,31 @@ function MainWindow({ startCall }) {
 
   return (
     <div className="container main-window">
-      <div>
-        <h1>Welcome to GBU's own video calling app!</h1>
-        <h3>
-          <br></br>
-          This is your ID -
-          <CopyToClipboardInput clientID={clientID} />
-        </h3>
-        <h4>Get started by calling a friend below</h4>
-      </div>
-      <div>
-        <input
-          type="text"
-          className="txt-clientId"
-          spellCheck={false}
-          placeholder="Your friend's ID"
-          onChange={(event) => setFriendID(event.target.value)}
-        />
-        <div>
-          <ActionButton icon={faVideo} onClick={callWithVideo(true)} />
-          <ActionButton icon={faPhone} onClick={callWithVideo(false)} />
+      <div className='flex'>
+        <h4 className='muted'>Welcome to</h4>
+        <img src={logo} alt="logo" />
+        <h4 className='muted'>GBU's very own video calling app!</h4>
+        <div className='roundBox'>
+
+          <h3 className='inputTitle'>
+            Your connection ID –<span style={{ color: '#00000099', fontWeight: 100 }}> share it with the friend you want to call.</span>
+            <CopyToClipboardInput clientID={clientID} />
+          </h3>
+          <div className='alreadyID'><h4>Already have an ID? Enter it below –</h4>
+            <div>
+              <input
+                type="text"
+                className="txt-clientId"
+                spellCheck={false}
+                placeholder="Your friend's ID"
+                onChange={(event) => setFriendID(event.target.value)}
+              /></div></div>
+
+          <div className='callButtons'>
+            <ActionButton icon={faVideo} onClick={callWithVideo(true)} />
+            <ActionButton icon={faPhone} onClick={callWithVideo(false)} />
+          </div>
+
         </div>
       </div>
     </div>
