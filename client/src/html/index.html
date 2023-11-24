@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
 </head>
 
-<body>
+
+<body id="body">
 	<div id="root"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.dots.min.js"></script>
+	<script>
+		VANTA.DOTS({
+			el: "#body",
+			mouseControls: true,
+			touchControls: true,
+			gyroControls: false,
+			minHeight: 800,
+			minWidth: 200.00,
+			scale: 2.00,
+			scaleMobile: 1.00,
+			spacing: 24.00,
+			showLines: false,
+			backgroundColor: 0xffffff
+		})
+	</script>
 </body>
+
 </html>
