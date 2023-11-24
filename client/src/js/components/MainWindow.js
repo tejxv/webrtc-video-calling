@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { faPhone, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faVideo, faCopy } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ActionButton from './ActionButton';
 import { socket } from '../communication';
 import logo from '../components/assets/logo.svg'
 
-// Include the CopyToClipboardInput component here
+
 function CopyToClipboardInput({ clientID }) {
   const [isCopied, setIsCopied] = useState(false);
 
@@ -26,13 +27,21 @@ function CopyToClipboardInput({ clientID }) {
 
   return (
     <div className='copyID'>
-      <input
-        type="text"
-        className="txt-clientId"
-        defaultValue={clientID}
-        readOnly
-        onClick={handleCopyToClipboard}
-      />
+      <div className='copyInputContainer'>
+        <input
+          type="text"
+          className="txt-clientId"
+          defaultValue={clientID}
+          readOnly
+          onClick={handleCopyToClipboard}
+        />
+        <FontAwesomeIcon
+          name='copy'
+          icon={faCopy}
+          className='copyIcon'
+          onClick={handleCopyToClipboard}
+        />
+      </div>
       {isCopied && <p style={{ color: 'blue', marginTop: '2rem' }}>Copied to clipboard!</p>}
     </div>
   );
@@ -70,14 +79,14 @@ function MainWindow({ startCall }) {
         <div className='roundBox'>
 
           <h3 className='inputTitle'>
-            Your connection ID –<span style={{ color: '#00000099', fontWeight: 100 }}> share it with the friend you want to call.</span>
+            Your connection ID –<span style={{ color: '#00000089', fontWeight: 100 }}> share it with the friend you want to call.</span>
             <CopyToClipboardInput clientID={clientID} />
           </h3>
           <div className='alreadyID'><h4>Already have an ID? Enter it below –</h4>
             <div>
               <input
                 type="text"
-                className="txt-clientId"
+                className="txt-pasteId"
                 spellCheck={false}
                 placeholder="Your friend's ID"
                 onChange={(event) => setFriendID(event.target.value)}

@@ -48,6 +48,7 @@
   }
   .inputTitle {
     display: flex;
+    font-weight: bold;
     text-align: center;
     // border: 1px solid red;
     flex-direction: column;
@@ -61,7 +62,7 @@
   }
   .txt-clientId {
     height: 40px;
-    width: 470px;
+    width: 430px;
     border: 2px solid #cfcfcf;
     color: #a5a5a5;
     font-size: 1em;
@@ -70,6 +71,29 @@
     border-radius: 14px;
     @include input-placeholder(rgba($main-color, 0.8));
   }
+  .copyIcon {
+    padding: 1.1rem;
+    border-radius: 12px;
+    border: 2px solid #cfcfcf;
+    margin-left: 1rem;
+    background: white;
+    cursor: pointer;
+  }
+  .copyInputContainer {
+    display: flex;
+    align-items: center;
+  }
+}
+.txt-pasteId {
+  height: 40px;
+  width: 470px;
+  border: 2px solid #cfcfcf;
+  color: #a5a5a5;
+  font-size: 1em;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 14px;
+  @include input-placeholder(rgba($main-color, 0.8));
 }
 .alreadyID {
   display: flex;
